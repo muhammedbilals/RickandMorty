@@ -17,7 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentPage = 1;
   List<Result> characterList = [];
   bool isLoading = false;
-  void handleNext() {}
 
   @override
   void initState() {
