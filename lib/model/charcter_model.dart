@@ -44,7 +44,7 @@ class Info {
     factory Info.fromJson(Map<String, dynamic> json) => Info(
         count: json["count"],
         pages: json["pages"],
-        next: json["next"],
+        next: json["next"] ??'',
         prev: json["prev"],
     );
 
@@ -60,7 +60,7 @@ class Result {
     int id;
     String name;
     Status status;
-    Species species;
+    Species? species;
     String type;
     Gender gender;
     Location origin;
@@ -89,7 +89,7 @@ class Result {
         id: json["id"],
         name: json["name"],
         status: statusValues.map[json["status"]]!,
-        species: speciesValues.map[json["species"]]!,
+        species: speciesValues.map[json["species"]]??speciesValues.map['Unknown'],
         type: json["type"],
         gender: genderValues.map[json["gender"]]!,
         origin: Location.fromJson(json["origin"]),
@@ -121,7 +121,8 @@ enum Gender { MALE, FEMALE, UNKNOWN }
 final genderValues = EnumValues({
     "Female": Gender.FEMALE,
     "Male": Gender.MALE,
-    "unknown": Gender.UNKNOWN
+    "unknown": Gender.UNKNOWN,
+    "Genderless": Gender.UNKNOWN
 });
 
 class Location {

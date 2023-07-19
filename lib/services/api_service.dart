@@ -6,9 +6,10 @@ import 'package:http/http.dart' as http;
 import 'package:machinetest/model/charcter_model.dart';
 
 class ApiService {
-  static Future<RickyMortyCharacters> getCharacters() async {
-    final response = await http
-        .get(Uri.parse('https://rickandmortyapi.com/api/character/?page=1'));
+  static Future<RickyMortyCharacters> getCharacters(page) async {
+    int pagenumber = 0;
+    final response = await http.get(Uri.parse(
+        'https://rickandmortyapi.com/api/character/?page=${pagenumber+page}'));
     if (response.statusCode == 200) {
       RickyMortyCharacters characters =
           RickyMortyCharacters.fromJson(json.decode(response.body));
