@@ -9,7 +9,7 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
+
 
     return const Padding(
       padding: EdgeInsets.all(10.0),
