@@ -6,14 +6,9 @@ import 'package:machinetest/core/constant/constant.dart';
 import 'package:machinetest/presentation/screens/home_screen.dart';
 import 'package:machinetest/presentation/widgets/textfieldsignup.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class LoginPage extends StatelessWidget {
+   LoginPage({super.key});
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
 
   final emailController = TextEditingController();

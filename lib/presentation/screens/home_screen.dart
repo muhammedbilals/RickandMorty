@@ -22,14 +22,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    controller.addListener(() async {
-      if (controller.position.maxScrollExtent == controller.position.pixels) {
-        BlocProvider.of<CharacterBloc>(context).add(LoadMoreData(
-          currentPage++,
-        ));
-        log('event triggered $currentPage');
-      }
-    });
+    controller.addListener(
+      () async {
+        if (controller.position.maxScrollExtent == controller.position.pixels) {
+          BlocProvider.of<CharacterBloc>(context).add(LoadMoreData(
+            currentPage++,
+          ));
+          log('event triggered $currentPage');
+        }
+      },
+    );
   }
 
   @override
